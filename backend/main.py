@@ -53,6 +53,7 @@ class CropInput(BaseModel):
     temperature: float
     humidity: float
     ph: float
+    rainfall: float
 
 class MicroInput(BaseModel):
     N: float

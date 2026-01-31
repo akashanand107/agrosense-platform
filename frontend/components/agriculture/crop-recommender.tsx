@@ -35,7 +35,8 @@ export const CropRecommender = () => {
                 K: formData.K,
                 temperature: formData.temperature,
                 humidity: formData.humidity,
-                ph: formData.ph
+                ph: formData.ph,
+                rainfall: formData.rainfall
             });
             setResult(response.recommendation);
         } catch (error) {
@@ -61,19 +62,12 @@ export const CropRecommender = () => {
                 ].map((field) => (
                     <div key={field.name} className="flex flex-col space-y-2">
                         <label className="text-sm font-medium text-forest/80">{field.label}</label>
-                        {field.name === "rainfall" ? (
-                            <div className="space-y-2">
-                                {/* Removed as per precision requirement */}
-                                <p className="text-xs text-text-secondary italic">Not used in precision model</p>
-                            </div>
-                        ) : (
-                            <Input
-                                type="number"
-                                name={field.name}
-                                onChange={handleChange}
-                                required
-                            />
-                        )}
+                        <Input
+                            type="number"
+                            name={field.name}
+                            onChange={handleChange}
+                            required
+                        />
                     </div>
                 ))}
 
