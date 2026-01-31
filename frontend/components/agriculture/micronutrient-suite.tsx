@@ -130,6 +130,9 @@ export const MicronutrientSuite = () => {
                             <option value="Pomegranate">Pomegranate</option>
                             <option value="Grapes">Grapes</option>
                             <option value="Mango">Mango</option>
+                            <option value="Mulberry">Mulberry</option>
+                            <option value="Potato">Potato</option>
+                            <option value="Ragi">Ragi</option>
                         </select>
                     </div>
 
@@ -139,7 +142,7 @@ export const MicronutrientSuite = () => {
                             disabled={loading}
                             className="w-full h-12 bg-sage hover:bg-sage-dark text-white font-bold rounded-xl transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                         >
-                            {loading ? "Analyzing..." : <>Run Diagnostics <ArrowRight className="h-4 w-4" /></>}
+                            {loading ? "Analyzing..." : <>Analyze Soil Veda <ArrowRight className="h-4 w-4" /></>}
                         </button>
                     </div>
                 </form>
@@ -161,8 +164,8 @@ export const MicronutrientSuite = () => {
 
                                 <div className="flex justify-between items-start z-10 mb-4">
                                     <div>
-                                        <h3 className="text-lg font-bold text-forest">{item.name}</h3>
-                                        <p className="text-xs font-mono text-text-secondary mt-1">
+                                        <h3 className="text-lg font-bold text-foreground">{item.name}</h3>
+                                        <p className="text-sm font-bold text-foreground mt-1">
                                             Predicted: {item.prediction_raw.toFixed(2)} ppm
                                         </p>
                                     </div>

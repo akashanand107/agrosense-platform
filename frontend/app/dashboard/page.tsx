@@ -8,7 +8,7 @@ export default function DashboardPage() {
             <header className="flex justify-between items-end border-b border-sage/10 pb-6">
                 <div>
                     <h2 className="text-3xl font-bold text-forest">Overview</h2>
-                    <p className="text-forest/60 mt-2">Welcome back. Here's your farm's latest intelligence report.</p>
+                    <p className="text-forest/60 mt-2">Welcome back. Here&apos;s your farm&apos;s latest intelligence report.</p>
                 </div>
                 <div className="flex gap-4">
                     <div className="px-4 py-2 bg-white rounded-lg border border-sage/20 shadow-sm">

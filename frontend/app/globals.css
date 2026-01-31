@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  /* Monarch Asset Manager Palette */
-  --background: #F8FAF8;
-  /* Mint-White */
-  --foreground: #1A1F16;
-  /* Deep Charcoal/Black */
+  /* Nutriveda Palette */
+  --background: #F9FAFB;
+  /* Very Light Gray/White */
+  --foreground: #111827;
+  /* Deep Charcoal (Primary Text) */
   --text-secondary: #374151;
   /* Slate Grey */
 
   --sage: #8A9A5B;
   /* Sage Green Accent */
   --sage-active: #8A9A5B;
-  /* Sage Green for active (same as accent for Monarch) */
-  --sage-dark: #6B7C42;
+  /* Sage Green for active */
+  --sage-dark: #748250;
 
-  --stone-forest: #1A1F16;
-  /* Fixed Dark Sidebar */
-  --slate-grey: #656D76;
+  --lime-white: #ECFCCB;
+  /* Secondary Highlight */
+
+  --stone-forest: #111827;
+  /* Sidebar Background (Deep Charcoal) */
+  --slate-grey: #6B7280;
   --ivory: #ffffff;
   /* Pure white for cards */
 
@@ -35,6 +38,8 @@
   --color-slate-grey: var(--slate-grey);
   --color-ivory: var(--ivory);
   --color-forest: var(--foreground);
+  --color-lime-white: var(--lime-white);
+  /* Added */
   /* Map forest to main black */
   --color-border-thin: var(--color-border-thin);
   --font-sans: var(--font-geist-sans);

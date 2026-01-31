@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { LayoutDashboard, Sprout, Droplets, Leaf, ThermometerSun, Settings, LogOut } from "lucide-react";
 import { motion } from "framer-motion";
+import { NutrivedaLogo } from "./nutriveda-logo";
 
 const sidebarItems = [
     {
@@ -41,9 +42,15 @@ export const Sidebar = () => {
         <aside className="fixed left-0 top-0 h-screen w-64 bg-stone-forest text-ivory flex flex-col justify-between border-r border-sage/10 z-50">
             <div>
                 <div className="p-8">
-                    <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                        <Leaf className="text-sage" /> AgroSense
+                    <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-3">
+                        <NutrivedaLogo className="h-8 w-8" />
+                        <span className="bg-gradient-to-r from-lime-white to-white bg-clip-text text-transparent">
+                            Nutriveda
+                        </span>
                     </h1>
+                    <p className="text-xs text-lime-white/70 mt-1 ml-11 font-medium tracking-wide">
+                        AI & Sensor Intelligence
+                    </p>
                 </div>
 
                 <nav className="px-4 space-y-2">

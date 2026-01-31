@@ -14,18 +14,27 @@ type SensorData = {
     moisture: number;
 };
 
-export const LiveSensor = () => {
-    const [data, setData] = useState<SensorData[]>([]);
+const generateDataPoint = (date: Date): SensorData => ({
+    time: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
+    n: 40 + Math.random() * 10,
+    p: 20 + Math.random() * 5,
+    k: 15 + Math.random() * 5,
+    ph: 6.5 + Math.random() * 0.5,
+    conductivity: 1.2 + Math.random() * 0.2, // dS/m
+    moisture: 45 + Math.random() * 5
+});
 
-    useEffect(() => {
+export const LiveSensor = () => {
+    const [data, setData] = useState<SensorData[]>(() => {
         // Initial Dummy Data
-        const initialData = Array.from({ length: 15 }).map((_, i) => {
+        return Array.from({ length: 15 }).map((_, i) => {
             const now = new Date();
             now.setSeconds(now.getSeconds() - (15 - i) * 5);
             return generateDataPoint(now);
         });
-        setData(initialData);
+    });
 
+    useEffect(() => {
         const interval = setInterval(() => {
             setData(prev => {
                 const nav = [...prev, generateDataPoint(new Date())];
@@ -36,16 +45,6 @@ export const LiveSensor = () => {
 
         return () => clearInterval(interval);
     }, []);
-
-    const generateDataPoint = (date: Date): SensorData => ({
-        time: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
-        n: 40 + Math.random() * 10,
-        p: 20 + Math.random() * 5,
-        k: 15 + Math.random() * 5,
-        ph: 6.5 + Math.random() * 0.5,
-        conductivity: 1.2 + Math.random() * 0.2, // dS/m
-        moisture: 45 + Math.random() * 5
-    });
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full">
