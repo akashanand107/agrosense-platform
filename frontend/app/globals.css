@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  /* Monarch Asset Manager Palette */
+  --background: #F8FAF8;
+  /* Mint-White */
+  --foreground: #1A1F16;
+  /* Deep Charcoal/Black */
+  --text-secondary: #374151;
+  /* Slate Grey */
+
+  --sage: #8A9A5B;
+  /* Sage Green Accent */
+  --sage-active: #8A9A5B;
+  /* Sage Green for active (same as accent for Monarch) */
+  --sage-dark: #6B7C42;
+
+  --stone-forest: #1A1F16;
+  /* Fixed Dark Sidebar */
+  --slate-grey: #656D76;
+  --ivory: #ffffff;
+  /* Pure white for cards */
+
+  --color-border-thin: #E5E7EB;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-text-secondary: var(--text-secondary);
+  --color-sage: var(--sage);
+  --color-sage-active: var(--sage-active);
+  --color-sage-dark: var(--sage-dark);
+  --color-stone-forest: var(--stone-forest);
+  --color-slate-grey: var(--slate-grey);
+  --color-ivory: var(--ivory);
+  --color-forest: var(--foreground);
+  /* Map forest to main black */
+  --color-border-thin: var(--color-border-thin);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1f18;
+    /* Darker Forest */
+    --foreground: #405840;
+    /* Ivory */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
