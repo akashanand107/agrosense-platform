@@ -43,7 +43,7 @@ export const MicronutrientSuite = () => {
                 K: parseFloat(formData.K),
                 ph: parseFloat(formData.ph),
                 EC: parseFloat(formData.EC),
-                crop_label: formData.crop_label
+                crop_label: formData.crop_label // Backend expects 'crop_label'
             };
 
             const response = await apiClient.post<Record<string, number>>("/predict/micronutrients", payload);
